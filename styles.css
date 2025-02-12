@@ -2,7 +2,7 @@
     position: absolute;
     width: 6px;
     height: 6px;
-    background: radial-gradient(circle, var(--sparkle-color1), var(--sparkle-color2));
+    background: radial-gradient(circle, var(--sparkle-colour1), var(--sparkle-colour2));
     border-radius: 50%;
     pointer-events: none;
     animation: sparkle-animation 0.7s ease-out forwards;
