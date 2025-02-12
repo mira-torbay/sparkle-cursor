@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log('Colour saved:', color);
         });
   
-        // send color to content script
+        // send colour to content script
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
           if (tabs[0].id) {
             chrome.tabs.sendMessage(tabs[0].id, { action: 'updateColour', color: color }, (response) => {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
   
-      // load saved color when popup opens
+      // load saved colour when popup opens
       chrome.storage.sync.get('sparkleColour', (data) => {
         if (data.sparkleColour) {
           colorPicker.value = data.sparkleColour;
