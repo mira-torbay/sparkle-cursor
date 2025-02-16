@@ -15,7 +15,7 @@ document.addEventListener('mousemove', (event) => {
     // set css vars
     sparkle.style.setProperty('--sparkle-colour1', lightenColour(sparkleColour, 40));
     sparkle.style.setProperty('--sparkle-colour2', sparkleColour);
-    sparkle.style.setProperty('--sparkle-shadow', sparkleColour);
+    sparkle.style.setProperty('--sparkle-shadow', lightenColour(sparkleColour, 20));
 
     sparkle.style.left = `${event.pageX}px`;
     sparkle.style.top = `${event.pageY}px`;
