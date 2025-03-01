@@ -1,9 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const applyButton = document.getElementById('applyButton');
     const colorPicker = document.getElementById('colorPicker');
+    const toggle = document.getElementById('checkb');
 
     console.log("applyButton:", applyButton);
     console.log("colorPicker:", colorPicker);
+    console.log("Switch:", toggle);
+
+    if(toggle){
+      toggle.addEventListener('click', () => {
+        const checkval = toggle.value;
+        // finish
+      })
+    }
   
     if (applyButton && colorPicker) {
       applyButton.addEventListener('click', () => {

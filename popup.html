@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Sparkle Trail</title>
     <style>
@@ -8,10 +9,12 @@
             padding: 10px;
             font-family: Arial, sans-serif;
         }
+
         input[type="color"] {
             width: 100%;
             margin-bottom: 10px;
         }
+
         button {
             width: 100%;
             padding: 10px;
@@ -20,11 +23,71 @@
             border: none;
             cursor: pointer;
         }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .round-slider {
+            border-radius: 34px;
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .round-slider:before {
+            border-radius: 50%;
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.round-slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.round-slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.round-slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
     </style>
 </head>
+
 <body>
     <input type="color" id="colorPicker" value="#5d00a9">
     <button id="applyButton">Apply Colour</button>
+    <label class="switch">
+        <input id="checkb" type="checkbox" checked>
+        <span class="round-slider"></span>
+    </label>
     <script src="popup.js"></script>
 </body>
+
 </html>
