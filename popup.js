@@ -9,7 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(toggle){
       toggle.addEventListener('click', () => {
-        const checkval = toggle.value;
+        const checkVal = toggle.value;
+
+        // save toggle setting to Chrome's storage
+        chrome.storage.sync.set({ toggleSetting: checkVal }, () => {
+          console.log('Toggle value saved:', checkVal);
+        });
+
         // finish
       })
     }
